@@ -1,63 +1,71 @@
-/**
- * URBAN WEB · Desarrollo Web Profesional
- */
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('DOMContentLoaded', function() {
+  /* --- Navbar: fondo sólido al hacer scroll --- */
+  const nav = document.getElementById('mainNav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-    // ============================================
-    // SCROLL SUAVE
-    // ============================================
-    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            var target = this.getAttribute('href');
-            if (target !== '#') {
-                e.preventDefault();
-                var el = document.querySelector(target);
-                if (el) {
-                    el.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
+  /* --- Cierra el menú móvil al pulsar un enlace --- */
+  const navCollapse = document.getElementById('navMenu');
+  document.querySelectorAll('#navMenu .nav-link, #navMenu .btn').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navCollapse.classList.contains('show')) {
+        bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+      }
     });
+  });
 
-    // ============================================
-    // ANIMACION DE ENTRADA
-    // ============================================
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry, i) {
-            if (entry.isIntersecting) {
-                setTimeout(function() {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, i * 100);
-            }
-        });
+  /* --- Revelado suave de secciones al hacer scroll --- */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-reveal-delay') || 0;
+          setTimeout(() => entry.target.classList.add('is-visible'), Number(delay));
+          observer.unobserve(entry.target);
+        }
+      });
     }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
 
-    document.querySelectorAll('.service-card, .plan-card, .proceso-item, .why-item, .riesgo-box').forEach(function(el) {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(25px)';
-        el.style.transition = 'all 0.5s ease-out';
-        observer.observe(el);
+  /* --- Formulario de contacto: validación y feedback --- */
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('formFeedback');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        feedback.textContent = 'Revisa los campos marcados, falta algún dato.';
+        feedback.style.color = '#C9822B';
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      // Aquí se conectaría con un backend, formulario (Formspree, etc.) o servicio de email real.
+      setTimeout(() => {
+        feedback.textContent = '¡Mensaje enviado! Te responderemos en menos de 24h.';
+        feedback.style.color = '#2557C7';
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        form.reset();
+        form.classList.remove('was-validated');
+      }, 900);
     });
-
-    // ============================================
-    // FORMULARIO
-    // ============================================
-    var form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Gracias por tu mensaje. Te responderemos lo antes posible.');
-            this.reset();
-        });
-    }
-
-    // ============================================
-    // LOG EN CONSOLA
-    // ============================================
-    console.log('URBAN WEB · Desarrollo Web Profesional');
-    console.log('Disponibilidad limitada · 3 proyectos por semana');
-    console.log('Codigo revisado · Sin IA generativa sin control');
+  }
 
 });
