@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>URBAN WEB · Desarrollo Web Profesional</title>
+    <title>DoraNet · Desarrollo Web Profesional</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
     
@@ -11,22 +11,16 @@
 </head>
 <body>
 
-    <!-- ===== FONDO ANIMADO ===== -->
-    <div class="bg-animated">
-        <div class="wave wave-1"></div>
-        <div class="wave wave-2"></div>
-        <div class="wave wave-3"></div>
-        <div class="wave wave-4"></div>
-    </div>
-    <div class="bg-particles" id="particles"></div>
-    <div class="bg-gradient"></div>
+    <!-- ===== FONDO DINÁMICO ===== -->
+    <canvas id="bgCanvas"></canvas>
+    <div class="noise-overlay"></div>
 
     <div class="container">
 
         <!-- ===== HEADER ===== -->
         <header class="header">
             <div class="logo">
-                URBAN WEB
+                DoraNet
                 <small>desarrollo web profesional</small>
             </div>
             <nav class="nav">
@@ -38,12 +32,12 @@
         </header>
 
         <!-- ===== HERO ===== -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-text">
                 <div class="badge">CODIGO REVISADO</div>
                 <h1>
                     Tu negocio<br />
-                    <span class="green">en internet</span>
+                    <span class="blue">en internet</span>
                 </h1>
                 <p>
                     Desarrollamos páginas web para restaurantes, comercios y marcas.
@@ -72,7 +66,7 @@
                 <span>lo que ofrecemos</span>
             </h2>
             <div class="grid-services">
-                <div class="service-card">
+                <div class="service-card" data-delay="0">
                     <h3>Web Basica</h3>
                     <p>Pagina web profesional, responsive, subida a hosting gratuito.</p>
                     <ul class="service-features">
@@ -83,7 +77,7 @@
                     </ul>
                     <span class="price">250 USD</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-delay="100">
                     <h3>Web + Dominio</h3>
                     <p>Todo lo anterior con dominio propio y hosting profesional.</p>
                     <ul class="service-features">
@@ -94,7 +88,7 @@
                     </ul>
                     <span class="price">350 USD</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-delay="200">
                     <h3>Web + Mantenimiento</h3>
                     <p>Incluye dominio, hosting y 6 meses de soporte.</p>
                     <ul class="service-features">
@@ -115,7 +109,7 @@
                 <span>elige el que necesitas</span>
             </h2>
             <div class="grid-plans">
-                <div class="plan-card">
+                <div class="plan-card" data-delay="0">
                     <h3>Basica</h3>
                     <div class="plan-price">250 USD</div>
                     <ul class="plan-features">
@@ -128,7 +122,7 @@
                     <a href="#contacto" class="btn btn-plan">Elegir</a>
                 </div>
 
-                <div class="plan-card plan-card-popular">
+                <div class="plan-card plan-card-popular" data-delay="100">
                     <div class="plan-badge">RECOMENDADO</div>
                     <h3>Con Dominio</h3>
                     <div class="plan-price">350 USD</div>
@@ -143,7 +137,7 @@
                     <a href="#contacto" class="btn btn-plan">Elegir</a>
                 </div>
 
-                <div class="plan-card">
+                <div class="plan-card" data-delay="200">
                     <h3>Completo</h3>
                     <div class="plan-price">400 USD</div>
                     <ul class="plan-features">
@@ -167,17 +161,17 @@
                 <span>dedicacion exclusiva</span>
             </h2>
             <div class="proceso-grid">
-                <div class="proceso-item">
+                <div class="proceso-item" data-delay="0">
                     <div class="proceso-num">01</div>
                     <h3>Contacto</h3>
                     <p>Nos cuentas tu proyecto y revisamos disponibilidad.</p>
                 </div>
-                <div class="proceso-item">
+                <div class="proceso-item" data-delay="100">
                     <div class="proceso-num">02</div>
                     <h3>Desarrollo</h3>
                     <p>Creamos tu web con codigo revisado y diseño cuidado.</p>
                 </div>
-                <div class="proceso-item">
+                <div class="proceso-item" data-delay="200">
                     <div class="proceso-num">03</div>
                     <h3>Entrega</h3>
                     <p>Recibes el codigo, el enlace y tu QR.</p>
@@ -199,21 +193,29 @@
                 <span>diferencias reales</span>
             </h2>
             <div class="why-grid">
-                <div class="why-item">
+                <div class="why-item" data-delay="0">
                     <h3>Codigo revisado</h3>
                     <p>No entregamos codigo generado por IA sin revisar. Cada linea es revisada y optimizada.</p>
                 </div>
-                <div class="why-item why-item-warning">
+                <div class="why-item" data-delay="100">
+                    <h3>Disponibilidad limitada</h3>
+                    <p>Trabajamos con pocos proyectos para dar la maxima calidad a cada cliente.</p>
+                </div>
+                <div class="why-item why-item-warning" data-delay="200">
                     <h3>Menos riesgos</h3>
                     <p>Muchos usan IA para generar webs completas sin revisar el codigo. Eso pone en peligro el negocio y la reputacion de sus clientes. Nosotros no.</p>
                 </div>
-                <div class="why-item">
+                <div class="why-item why-item-special" data-delay="300">
+                    <h3>Hablas con nosotros, no con un bot</h3>
+                    <p>Cuando nos escribes, respondemos personas. No IA, no automatismos. Si tienes una duda, la resolvemos en directo.</p>
+                </div>
+                <div class="why-item" data-delay="400">
                     <h3>Expertos titulados</h3>
                     <p>Sabemos lo que hacemos. Formacion y experiencia real en desarrollo web.</p>
                 </div>
-                <div class="why-item">
-                    <h3>Disponibilidad limitada</h3>
-                    <p>Trabajamos con pocos proyectos para dar la maxima calidad a cada cliente.</p>
+                <div class="why-item why-item-special" data-delay="500">
+                    <h3>El codigo es tuyo, lo entiendes</h3>
+                    <p>No te damos un zip con archivos ofuscados. Entregamos codigo limpio, comentado y que puedes modificar tu mismo si quieres.</p>
                 </div>
             </div>
 
@@ -252,7 +254,7 @@
 
         <!-- ===== FOOTER ===== -->
         <footer class="footer">
-            <p>&copy; 2026 URBAN WEB · Desarrollo Web Profesional</p>
+            <p>&copy; 2026 DoraNet · Desarrollo Web Profesional</p>
             <p class="footer-tag">codigo revisado · disponibilidad limitada</p>
         </footer>
 
