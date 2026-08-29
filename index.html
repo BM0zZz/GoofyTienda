@@ -1,493 +1,1727 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DoraCiber · Desarrollo, tecnología y seguridad</title>
-<meta name="description" content="DoraNet ofrece desarrollo web y móvil, soporte IT, herramientas Python y Linux, formación y servicios de seguridad informática para particulares y empresas." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>DoraCiber | Desarrollo Web, Python, Linux y Ciberseguridad</title>
 
-<!-- Bootstrap 5 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <meta
+    name="description"
+    content="DoraCiber ofrece desarrollo web a medida, aplicaciones, herramientas Python y Linux, soporte IT y servicios de ciberseguridad para particulares y empresas en España."
+  />
 
-<link rel="stylesheet" href="css/style.css" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="DoraCiber" />
+
+  <link rel="canonical" href="https://doraciber.es/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta
+    property="og:title"
+    content="DoraCiber | Desarrollo Web, Python, Linux y Ciberseguridad"
+  />
+  <meta
+    property="og:description"
+    content="Desarrollo web a medida, aplicaciones, herramientas Python y Linux, soporte IT y ciberseguridad."
+  />
+  <meta property="og:url" content="https://doraciber.es/" />
+  <meta property="og:site_name" content="DoraCiber" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- EmailJS -->
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DoraCiber",
+    "url": "https://doraciber.es/",
+    "email": "doraciber@doraciber.es",
+    "description": "Servicios de desarrollo web, aplicaciones, herramientas Python y Linux, soporte IT, formación tecnológica y ciberseguridad.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "España"
+    },
+    "serviceType": [
+      "Desarrollo web",
+      "Desarrollo de aplicaciones",
+      "Herramientas Python",
+      "Herramientas Linux",
+      "Ciberseguridad",
+      "Soporte IT",
+      "Formación en desarrollo",
+      "Formación en Linux y ciberseguridad"
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="#top">
-      <span class="brand-mark">Dora<span class="text-accent">Ciber</span></span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#servicios-extra">Planes extra</a></li>
-        <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
-        <li class="nav-item"><a class="nav-link" href="#por-que">Por qué nosotros</a></li>
-        <li class="nav-item ms-lg-2">
-          <a class="btn btn-accent btn-sm px-3" href="#contacto">Pedir presupuesto</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <!-- ===================== NAVBAR ===================== -->
 
-<!-- ===== HERO ===== -->
-<header class="hero" id="top">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="container position-relative">
-    <div class="row align-items-center gy-5 py-5">
-      <div class="col-lg-6" data-reveal>
-        <span class="eyebrow"><i class="bi bi-check2-circle"></i> Código revisado a mano · disponibilidad limitada</span>
-        <h1 class="hero-title">Tu negocio, con una web que <span class="text-accent">inspira confianza</span></h1>
-        <p class="hero-lead">
-          Diseñamos y desarrollamos webs a medida para restaurantes, comercios y marcas.
-          Sin plantillas genéricas ni código sin revisar: cada proyecto pasa por manos
-          de un desarrollador antes de llegar a ti.
-        </p>
-        <div class="d-flex flex-wrap gap-3 mt-4">
-          <a href="#contacto" class="btn btn-accent btn-lg px-4">Quiero mi web</a>
-          <a href="#planes" class="btn btn-outline-nav btn-lg px-4">Ver planes y precios</a>
-        </div>
-        <div class="hero-stats row row-cols-3 mt-5 gx-3">
-          <div class="col">
-            <div class="stat-num">3</div>
-            <div class="stat-label">proyectos / semana</div>
-          </div>
-          <div class="col">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">código propio</div>
-          </div>
-          <div class="col">
-            <div class="stat-num">6m</div>
-            <div class="stat-label">soporte incluido*</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6" data-reveal data-reveal-delay="150">
-        <div class="hero-panel">
-          <div class="browser-mock">
-            <div class="browser-bar">
-              <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-              <div class="browser-url"><i class="bi bi-lock-fill"></i> tunegocio.com</div>
-            </div>
-            <div class="browser-body">
-              <div class="code-line"><span class="code-tag">&lt;header&gt;</span></div>
-              <div class="code-line ps-3"><span class="code-attr">class</span>=<span class="code-str">"marca"</span></div>
-              <div class="code-line"><span class="code-tag">&lt;/header&gt;</span></div>
-              <div class="code-line mt-2"><span class="code-comment">// revisado por un humano ✓</span></div>
-              <div class="code-line"><span class="code-tag">&lt;section</span> <span class="code-attr">id</span>=<span class="code-str">"contacto"</span><span class="code-tag">&gt;</span></div>
-            </div>
-          </div>
-          <div class="floating-card card-qr">
-            <i class="bi bi-qr-code"></i>
-            <div>
-              <strong>QR incluido</strong>
-              <span>listo para tu carta o escaparate</span>
-            </div>
-          </div>
-          <div class="floating-card card-link">
-            <i class="bi bi-globe2"></i>
-            <div>
-              <strong>Enlace propio</strong>
-              <span>publicada y funcionando</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <!-- ===== PLANES ===== -->
-  <section class="section section-tint" id="planes">
+  <nav
+    class="navbar navbar-expand-lg fixed-top"
+    id="mainNav"
+    aria-label="Navegación principal"
+  >
     <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow eyebrow-dark">Planes</span>
-        <h2>Elige el plan que mejor encaja contigo</h2>
-        <p>Precio cerrado, sin sorpresas ni cuotas ocultas.</p>
+
+      <a
+        class="navbar-brand"
+        href="#top"
+        aria-label="DoraCiber - Inicio"
+      >
+        <span class="brand-mark">
+          Dora<span class="text-accent">Ciber</span>
+        </span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Abrir menú"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse"
+        id="navMenu"
+      >
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#planes">
+              Planes
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios-extra">
+              Servicios
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#proceso">
+              Proceso
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#por-que">
+              Por qué nosotros
+            </a>
+          </li>
+
+          <li class="nav-item ms-lg-2">
+            <a
+              class="btn btn-accent btn-sm px-3"
+              href="#contacto"
+            >
+              Pedir presupuesto
+            </a>
+          </li>
+
+        </ul>
       </div>
 
-      <div class="row g-4 mt-2 justify-content-center align-items-stretch">
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="0">
-          <div class="plan-card h-100">
-            <h3>Básica</h3>
-            <div class="plan-price">250 <span>€</span></div>
-            <p class="plan-sub">Para empezar a estar online hoy mismo.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>1 página web a medida</li>
-              <li><i class="bi bi-check2"></i>Diseño responsive</li>
-              <li><i class="bi bi-check2"></i>Subida a hosting gratuito</li>
-              <li><i class="bi bi-check2"></i>QR personalizado</li>
-              <li><i class="bi bi-check2"></i>Enlace listo para usar</li>
-            </ul>
-            <a href="#contacto" class="btn btn-outline-nav w-100 mt-auto">Elegir Básica</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="100">
-          <div class="plan-card plan-card-popular h-100">
-            <div class="plan-badge">Más elegido</div>
-            <h3>Con Dominio</h3>
-            <div class="plan-price">350 <span>€</span></div>
-            <p class="plan-sub">Tu marca, con dominio y hosting propios.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>1 página web a medida</li>
-              <li><i class="bi bi-check2"></i>Diseño responsive</li>
-              <li><i class="bi bi-check2"></i>Dominio .com (1 año)</li>
-              <li><i class="bi bi-check2"></i>Hosting profesional</li>
-              <li><i class="bi bi-check2"></i>QR personalizado</li>
-              <li><i class="bi bi-check2"></i>Enlace listo para usar</li>
-            </ul>
-            <a href="#contacto" class="btn btn-accent w-100 mt-auto">Elegir Con Dominio</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="200">
-          <div class="plan-card h-100">
-            <h3>Completo</h3>
-            <div class="plan-price">400 <span>€</span></div>
-            <p class="plan-sub">Web, dominio, hosting y soporte, todo resuelto.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>1 página web a medida</li>
-              <li><i class="bi bi-check2"></i>Diseño responsive</li>
-              <li><i class="bi bi-check2"></i>Dominio .com (1 año)</li>
-              <li><i class="bi bi-check2"></i>Hosting profesional</li>
-              <li><i class="bi bi-check2"></i>QR personalizado</li>
-              <li><i class="bi bi-check2"></i>6 meses de mantenimiento</li>
-              <li><i class="bi bi-check2"></i>Soporte técnico incluido</li>
-            </ul>
-            <a href="#contacto" class="btn btn-outline-nav w-100 mt-auto">Elegir Completo</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+  </nav>
 
 
-  <!-- ===== SERVICIOS EXTRA ===== -->
-  <section class="section" id="servicios-extra">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow eyebrow-dark">Servicios adicionales</span>
-        <h2>Mucho más que una página web</h2>
-        <p>Desarrollo, soporte, formación y seguridad informática para ayudarte con tus necesidades tecnológicas.</p>
-      </div>
+  <!-- ===================== HERO ===================== -->
 
-      <div class="row g-4 mt-2">
+  <header class="hero" id="top">
 
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="0">
-          <div class="service-card h-100">
-            <div class="service-icon"><i class="bi bi-phone"></i></div>
-            <h3>Desarrollo de aplicaciones</h3>
-            <p>Creamos aplicaciones Android y soluciones multiplataforma adaptadas a las necesidades de tu proyecto.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Aplicaciones Android</li>
-              <li><i class="bi bi-check2"></i>Desarrollo multiplataforma</li>
-              <li><i class="bi bi-check2"></i>Interfaces modernas</li>
-              <li><i class="bi bi-check2"></i>Desarrollo a medida</li>
-              <li><i class="bi bi-check2"></i>Código preparado para ampliar</li>
-            </ul>
-            <div class="service-price">Desde 450 €</div>
-          </div>
-        </div>
+    <div
+      class="hero-grid"
+      aria-hidden="true"
+    ></div>
 
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="80">
-          <div class="service-card h-100">
-            <div class="service-icon"><i class="bi bi-terminal"></i></div>
-            <h3>Herramientas Python &amp; Linux</h3>
-            <p>Desarrollamos herramientas personalizadas para automatización, administración, análisis y tareas técnicas.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Scripts en Python</li>
-              <li><i class="bi bi-check2"></i>Automatización</li>
-              <li><i class="bi bi-check2"></i>Herramientas técnicas</li>
-              <li><i class="bi bi-check2"></i>Monitorización y análisis</li>
-              <li><i class="bi bi-check2"></i>Soluciones personalizadas</li>
-            </ul>
-            <div class="service-price">Desde 250 €</div>
-          </div>
-        </div>
+    <div class="container position-relative">
 
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="160">
-          <div class="service-card h-100">
-            <div class="service-icon"><i class="bi bi-shield-lock"></i></div>
-            <h3>Seguridad informática</h3>
-            <p>Analizamos webs, aplicaciones e infraestructura para identificar posibles vulnerabilidades y reducir riesgos.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Auditoría de seguridad web</li>
-              <li><i class="bi bi-check2"></i>Revisión de configuraciones</li>
-              <li><i class="bi bi-check2"></i>Análisis de infraestructura</li>
-              <li><i class="bi bi-check2"></i>Pruebas autorizadas</li>
-              <li><i class="bi bi-check2"></i>Informe y recomendaciones</li>
-            </ul>
-            <div class="service-price">Desde 300 €</div>
-          </div>
-        </div>
+      <div class="row align-items-center gy-5 py-5">
 
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="0">
-          <div class="service-card h-100">
-            <div class="service-icon"><i class="bi bi-pc-display"></i></div>
-            <h3>Soporte IT</h3>
-            <p>Te ayudamos a resolver problemas informáticos, aplicaciones y sistemas operativos.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Windows 11</li>
-              <li><i class="bi bi-check2"></i>Linux</li>
-              <li><i class="bi bi-check2"></i>macOS</li>
-              <li><i class="bi bi-check2"></i>Instalación de software</li>
-              <li><i class="bi bi-check2"></i>Resolución de incidencias</li>
-            </ul>
-            <div class="service-price">35 €/hora</div>
-          </div>
-        </div>
+        <div
+          class="col-lg-6"
+          data-reveal
+        >
 
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="80">
-          <div class="service-card h-100">
-            <div class="service-icon"><i class="bi bi-code-square"></i></div>
-            <h3>Formación en desarrollo</h3>
-            <p>Clases prácticas para personas que quieran comenzar o mejorar sus conocimientos de desarrollo web y móvil.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Fundamentos de programación</li>
-              <li><i class="bi bi-check2"></i>Desarrollo web</li>
-              <li><i class="bi bi-check2"></i>Desarrollo móvil</li>
-              <li><i class="bi bi-check2"></i>Buenas prácticas</li>
-              <li><i class="bi bi-check2"></i>Código robusto y mantenible</li>
-            </ul>
-            <div class="service-price">Desde 30 €/hora</div>
-          </div>
-        </div>
+          <span class="eyebrow">
+            <i class="bi bi-check2-circle"></i>
+            Código revisado a mano · disponibilidad limitada
+          </span>
 
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="160">
-          <div class="service-card h-100">
-            <div class="service-icon"><i class="bi bi-shield-check"></i></div>
-            <h3>Formación en Linux y ciberseguridad</h3>
-            <p>Formación práctica para construir una base sólida en Linux, seguridad informática y pentesting ético.</p>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Fundamentos de Linux</li>
-              <li><i class="bi bi-check2"></i>Terminal y herramientas</li>
-              <li><i class="bi bi-check2"></i>Conceptos de ciberseguridad</li>
-              <li><i class="bi bi-check2"></i>Herramientas de análisis</li>
-              <li><i class="bi bi-check2"></i>Introducción al pentesting ético</li>
-            </ul>
-            <div class="service-price">Desde 35 €/hora</div>
-          </div>
-        </div>
+          <h1 class="hero-title">
+            Desarrollo web y soluciones tecnológicas
+            <span class="text-accent">a medida</span>
+          </h1>
 
-      </div>
-
-      <div class="notice-box mt-5" data-reveal>
-        <i class="bi bi-mortarboard"></i>
-        <p>
-          <strong>Formación práctica y orientada a resultados.</strong>
-          No ofrecemos certificados ni titulaciones oficiales. Nuestro objetivo es ayudarte a construir una base sólida de conocimientos y comprobar durante el aprendizaje que realmente comprendes los conceptos y sabes aplicarlos.
-          <br><br>
-          Queremos que termines cada formación con conocimientos que puedas utilizar por tu cuenta y con una base que te permita seguir avanzando con confianza.
-        </p>
-      </div>
-
-      <div class="notice-box mt-4" data-reveal>
-        <i class="bi bi-shield-lock"></i>
-        <p>
-          <strong>Seguridad y ética.</strong>
-          Las pruebas de seguridad se realizan exclusivamente sobre sistemas para los que el cliente tenga autorización. Nuestro objetivo es detectar posibles problemas, explicar su impacto y ayudar a reducir el riesgo.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROCESO ===== -->
-  <section class="section" id="proceso">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow eyebrow-dark">Cómo trabajamos</span>
-        <h2>Tres pasos, sin complicaciones</h2>
-        <p>Primero hablamos contigo, después acordamos el servicio y finalmente comenzamos.</p>
-      </div>
-
-      <div class="row g-4 mt-3 process-row">
-        <div class="col-md-4" data-reveal data-reveal-delay="0">
-          <div class="process-step">
-            <div class="process-num">01</div>
-            <h3>Nos cuentas tu proyecto</h3>
-            <p>Escríbenos por correo y explícanos qué necesitas. Revisaremos tu solicitud y nos pondremos en contacto contigo.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-reveal data-reveal-delay="100">
-          <div class="process-step">
-            <div class="process-num">02</div>
-            <h3>Recibes tu presupuesto</h3>
-            <p>Te enviamos una propuesta clara con el servicio, precio, alcance y condiciones antes de realizar cualquier pago.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-reveal data-reveal-delay="200">
-          <div class="process-step">
-            <div class="process-num">03</div>
-            <h3>Confirmas y comenzamos</h3>
-            <p>Una vez aceptado el presupuesto, te indicaremos el método de pago acordado y comenzaremos el trabajo.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="availability-banner mt-5" data-reveal>
-        <i class="bi bi-calendar2-check"></i>
-        <p>Trabajamos con disponibilidad limitada: máximo <strong>3 proyectos por semana</strong> para poder cuidar cada detalle.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== POR QUÉ NOSOTROS ===== -->
-  <section class="section section-tint" id="por-que">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow eyebrow-dark">Por qué nosotros</span>
-        <h2>Diferencias que se notan a largo plazo</h2>
-        <p>No competimos por ser los más baratos, sino por ser los más de fiar.</p>
-      </div>
-
-      <div class="row g-4 mt-2">
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="0">
-          <div class="why-card">
-            <i class="bi bi-code-square"></i>
-            <h3>Código revisado a mano</h3>
-            <p>Nada de código generado y entregado sin más. Cada línea pasa por revisión antes de publicarse.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="80">
-          <div class="why-card">
-            <i class="bi bi-calendar-week"></i>
-            <h3>Disponibilidad limitada</h3>
-            <p>Aceptamos pocos proyectos a la vez para poder dedicar el tiempo que cada web necesita.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="160">
-          <div class="why-card why-card-accent">
-            <i class="bi bi-person-lines-fill"></i>
-            <h3>Hablas con personas, no con un bot</h3>
-            <p>Cuando escribes, te responde alguien del equipo. Sin automatismos ni respuestas enlatadas.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="0">
-          <div class="why-card">
-            <i class="bi bi-mortarboard"></i>
-            <h3>Formación y experiencia real</h3>
-            <p>Desarrollo web con criterio, no solo con plantillas montadas a toda prisa.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="80">
-          <div class="why-card why-card-accent">
-            <i class="bi bi-unlock"></i>
-            <h3>El código es tuyo y lo entiendes</h3>
-            <p>Nada de archivos ofuscados. Código limpio y comentado que puedes editar cuando quieras.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-reveal data-reveal-delay="160">
-          <div class="why-card why-card-warning">
-            <i class="bi bi-exclamation-triangle"></i>
-            <h3>Menos riesgos para tu negocio</h3>
-            <p>Una web mal hecha o sin revisar puede costarte clientes y reputación. Nosotros minimizamos ese riesgo.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="notice-box mt-5" data-reveal>
-        <i class="bi bi-info-circle"></i>
-        <p><strong>Nota honesta:</strong> en desarrollo web el riesgo cero no existe, ni con nosotros. Lo que sí garantizamos es reducirlo al máximo con código revisado, pruebas reales y experiencia.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACTO ===== -->
-  <section class="section" id="contacto">
-    <div class="container">
-      <div class="row g-5 align-items-start">
-        <div class="col-lg-5" data-reveal>
-          <span class="eyebrow eyebrow-dark">Contacto</span>
-          <h2 class="mb-3">Cuéntanos tu proyecto</h2>
-          <p class="text-muted mb-4">
-            Escríbenos con los datos de tu negocio y el plan que te interesa.
-            Te respondemos en menos de 24h para confirmar disponibilidad.
+          <p class="hero-lead">
+            Creamos páginas web profesionales, aplicaciones,
+            herramientas Python y Linux y soluciones de
+            ciberseguridad para particulares y empresas en España.
           </p>
-          <ul class="contact-info">
-            <li><i class="bi bi-envelope"></i> doraciber@doraciber.es</li>
-            <li><i class="bi bi-geo-alt"></i> Trabajo remoto, clientes en toda España</li>
-          </ul>
-        </div>
-        <div class="col-lg-7" data-reveal data-reveal-delay="120">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label" for="nombre">Tu nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre y apellidos" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="email">Tu email</label>
-                <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="negocio">Nombre de tu negocio</label>
-                <input type="text" class="form-control" id="negocio" placeholder="Opcional">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="plan">¿Qué servicio te interesa?</label>
-                <select class="form-select" id="plan">
-                  <option value="" selected>Elige un servicio</option>
-                  <option value="basica">Básica — 250 €</option>
-                  <option value="dominio">Con Dominio — 350 €</option>
-                  <option value="completo">Completo — 400 €</option>
-                  <option value="android">Desarrollo Android — Desde 450 €</option>
-                  <option value="multiplataforma">Desarrollo multiplataforma — Desde 600 €</option>
-                  <option value="python-linux">Herramientas Python &amp; Linux — Desde 250 €</option>
-                  <option value="seguridad">Seguridad informática — Desde 300 €</option>
-                  <option value="soporte-it">Soporte IT — 35 €/hora</option>
-                  <option value="formacion-desarrollo">Formación en desarrollo — Desde 30 €/hora</option>
-                  <option value="formacion-ciberseguridad">Formación Linux y ciberseguridad — Desde 35 €/hora</option>
-                  <option value="otro">Otro / No estoy seguro</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="mensaje">Cuéntanos tu proyecto</label>
-                <textarea class="form-control" id="mensaje" rows="4" placeholder="¿Qué tipo de negocio tienes y qué necesitas?" required></textarea>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-accent btn-lg px-4">Enviar mensaje</button>
-                <span class="form-feedback ms-3" id="formFeedback"></span>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+
+            <a
+              href="#contacto"
+              class="btn btn-accent btn-lg px-4"
+            >
+              Quiero mi web
+            </a>
+
+            <a
+              href="#planes"
+              class="btn btn-outline-nav btn-lg px-4"
+            >
+              Ver planes y precios
+            </a>
+
+          </div>
+
+          <div class="hero-stats row row-cols-3 mt-5 gx-3">
+
+            <div class="col">
+              <div class="stat-num">3</div>
+              <div class="stat-label">
+                proyectos / semana
               </div>
             </div>
-          </form>
+
+            <div class="col">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">
+                código propio
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="stat-num">6m</div>
+              <div class="stat-label">
+                soporte incluido*
+              </div>
+            </div>
+
+          </div>
+
         </div>
+
+
+        <div
+          class="col-lg-6"
+          data-reveal
+          data-reveal-delay="150"
+        >
+
+          <div class="hero-panel">
+
+            <div class="browser-mock">
+
+              <div class="browser-bar">
+
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+
+                <div class="browser-url">
+                  <i class="bi bi-lock-fill"></i>
+                  tunegocio.com
+                </div>
+
+              </div>
+
+              <div class="browser-body">
+
+                <div class="code-line">
+                  <span class="code-tag">&lt;header&gt;</span>
+                </div>
+
+                <div class="code-line ps-3">
+                  <span class="code-attr">class</span>=<span class="code-str">"marca"</span>
+                </div>
+
+                <div class="code-line">
+                  <span class="code-tag">&lt;/header&gt;</span>
+                </div>
+
+                <div class="code-line mt-2">
+                  <span class="code-comment">
+                    // revisado por un humano ✓
+                  </span>
+                </div>
+
+                <div class="code-line">
+                  <span class="code-tag">&lt;section</span>
+                  <span class="code-attr"> id</span>=<span class="code-str">"contacto"</span>
+                  <span class="code-tag">&gt;</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="floating-card card-qr">
+
+              <i class="bi bi-qr-code"></i>
+
+              <div>
+                <strong>QR incluido</strong>
+                <span>Listo para tu carta o escaparate</span>
+              </div>
+
+            </div>
+
+
+            <div class="floating-card card-link">
+
+              <i class="bi bi-globe2"></i>
+
+              <div>
+                <strong>Enlace propio</strong>
+                <span>Publicada y funcionando</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
     </div>
-  </section>
 
-</main>
+  </header>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 py-4">
-    <span class="brand-mark small">Dora<span class="text-accent">Ciber</span></span>
-    <p class="mb-0 small">&copy; 2026 DoraCiber · Desarrollo web profesional</p>
-    <p class="mb-0 small text-muted">Código revisado · disponibilidad limitada</p>
-    <div class="small legal-links">
-      <a href="aviso-legal.html">Aviso legal</a> ·
-      <a href="privacidad.html">Política de privacidad</a> ·
-      <a href="cookies.html">Política de cookies</a> ·
-      <a href="condiciones.html">Condiciones de contratación</a>
+
+  <main>
+
+    <!-- ===================== PLANES ===================== -->
+
+    <section
+      class="section section-tint"
+      id="planes"
+    >
+
+      <div class="container">
+
+        <div
+          class="section-head"
+          data-reveal
+        >
+
+          <span class="eyebrow eyebrow-dark">
+            Desarrollo web
+          </span>
+
+          <h2>
+            Planes de páginas web profesionales
+          </h2>
+
+          <p>
+            Precios cerrados para crear una página web profesional,
+            responsive y adaptada a las necesidades de tu negocio.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-2 justify-content-center align-items-stretch">
+
+          <!-- BÁSICA -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="0"
+          >
+
+            <div class="plan-card h-100">
+
+              <h3>Básica</h3>
+
+              <div class="plan-price">
+                250 <span>€</span>
+              </div>
+
+              <p class="plan-sub">
+                Para empezar a estar online hoy mismo.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  1 página web a medida
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Diseño responsive
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Subida a hosting gratuito
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  QR personalizado
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Enlace listo para usar
+                </li>
+
+              </ul>
+
+              <a
+                href="#contacto"
+                class="btn btn-outline-nav w-100 mt-auto"
+              >
+                Elegir Básica
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- CON DOMINIO -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="100"
+          >
+
+            <div class="plan-card plan-card-popular h-100">
+
+              <div class="plan-badge">
+                Más elegido
+              </div>
+
+              <h3>Con Dominio</h3>
+
+              <div class="plan-price">
+                350 <span>€</span>
+              </div>
+
+              <p class="plan-sub">
+                Tu marca, con dominio y hosting propios.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  1 página web a medida
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Diseño responsive
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Dominio .com (1 año)
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Hosting profesional
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  QR personalizado
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Enlace listo para usar
+                </li>
+
+              </ul>
+
+              <a
+                href="#contacto"
+                class="btn btn-accent w-100 mt-auto"
+              >
+                Elegir Con Dominio
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- COMPLETO -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="200"
+          >
+
+            <div class="plan-card h-100">
+
+              <h3>Completo</h3>
+
+              <div class="plan-price">
+                400 <span>€</span>
+              </div>
+
+              <p class="plan-sub">
+                Web, dominio, hosting y soporte, todo resuelto.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  1 página web a medida
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Diseño responsive
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Dominio .com (1 año)
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Hosting profesional
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  QR personalizado
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  6 meses de mantenimiento
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Soporte técnico incluido
+                </li>
+
+              </ul>
+
+              <a
+                href="#contacto"
+                class="btn btn-outline-nav w-100 mt-auto"
+              >
+                Elegir Completo
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================== SERVICIOS ===================== -->
+
+    <section
+      class="section"
+      id="servicios-extra"
+    >
+
+      <div class="container">
+
+        <div
+          class="section-head"
+          data-reveal
+        >
+
+          <span class="eyebrow eyebrow-dark">
+            Servicios tecnológicos
+          </span>
+
+          <h2>
+            Desarrollo, Python, Linux y ciberseguridad
+          </h2>
+
+          <p>
+            Soluciones tecnológicas a medida para empresas y particulares:
+            desarrollo de aplicaciones, automatización, sistemas,
+            soporte informático y seguridad.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-2">
+
+          <!-- APLICACIONES -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="0"
+          >
+
+            <div class="service-card h-100">
+
+              <div class="service-icon">
+                <i class="bi bi-phone"></i>
+              </div>
+
+              <h3>
+                Desarrollo de aplicaciones
+              </h3>
+
+              <p>
+                Creamos aplicaciones Android y soluciones
+                multiplataforma adaptadas a las necesidades
+                de tu proyecto.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Aplicaciones Android
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Desarrollo multiplataforma
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Interfaces modernas
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Desarrollo a medida
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Código preparado para ampliar
+                </li>
+
+              </ul>
+
+              <div class="service-price">
+                Desde 450 €
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PYTHON / LINUX -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="80"
+          >
+
+            <div class="service-card h-100">
+
+              <div class="service-icon">
+                <i class="bi bi-terminal"></i>
+              </div>
+
+              <h3>
+                Herramientas Python y Linux
+              </h3>
+
+              <p>
+                Desarrollamos herramientas y scripts personalizados
+                para automatización, administración, monitorización,
+                análisis y tareas técnicas.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Scripts en Python
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Automatización de tareas
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Herramientas para Linux
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Monitorización y análisis
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Soluciones personalizadas
+                </li>
+
+              </ul>
+
+              <div class="service-price">
+                Desde 250 €
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CIBERSEGURIDAD -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="160"
+          >
+
+            <div class="service-card h-100">
+
+              <div class="service-icon">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+
+              <h3>
+                Ciberseguridad
+              </h3>
+
+              <p>
+                Analizamos webs, aplicaciones e infraestructura
+                para identificar posibles vulnerabilidades y
+                reducir riesgos.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Auditoría de seguridad web
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Revisión de configuraciones
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Análisis de infraestructura
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Pruebas autorizadas
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Informe y recomendaciones
+                </li>
+
+              </ul>
+
+              <div class="service-price">
+                Desde 300 €
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SOPORTE IT -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="0"
+          >
+
+            <div class="service-card h-100">
+
+              <div class="service-icon">
+                <i class="bi bi-pc-display"></i>
+              </div>
+
+              <h3>
+                Soporte informático IT
+              </h3>
+
+              <p>
+                Ayudamos a resolver problemas informáticos,
+                aplicaciones, sistemas operativos e incidencias
+                técnicas.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Windows 11
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Linux
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  macOS
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Instalación de software
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Resolución de incidencias
+                </li>
+
+              </ul>
+
+              <div class="service-price">
+                35 €/hora
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FORMACIÓN DESARROLLO -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="80"
+          >
+
+            <div class="service-card h-100">
+
+              <div class="service-icon">
+                <i class="bi bi-code-square"></i>
+              </div>
+
+              <h3>
+                Formación en desarrollo
+              </h3>
+
+              <p>
+                Clases prácticas para personas que quieran comenzar
+                o mejorar sus conocimientos de desarrollo web y móvil.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Fundamentos de programación
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Desarrollo web
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Desarrollo móvil
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Buenas prácticas
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Código robusto y mantenible
+                </li>
+
+              </ul>
+
+              <div class="service-price">
+                Desde 30 €/hora
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FORMACIÓN LINUX / CIBER -->
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="160"
+          >
+
+            <div class="service-card h-100">
+
+              <div class="service-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+
+              <h3>
+                Formación en Linux y ciberseguridad
+              </h3>
+
+              <p>
+                Formación práctica para construir una base sólida
+                en Linux, seguridad informática y pentesting ético.
+              </p>
+
+              <ul class="check-list">
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Fundamentos de Linux
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Terminal y herramientas
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Conceptos de ciberseguridad
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Herramientas de análisis
+                </li>
+
+                <li>
+                  <i class="bi bi-check2"></i>
+                  Introducción al pentesting ético
+                </li>
+
+              </ul>
+
+              <div class="service-price">
+                Desde 35 €/hora
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AVISO FORMACIÓN -->
+
+        <div
+          class="notice-box mt-5"
+          data-reveal
+        >
+
+          <i class="bi bi-mortarboard"></i>
+
+          <p>
+
+            <strong>
+              Formación práctica y orientada a resultados.
+            </strong>
+
+            No ofrecemos certificados ni titulaciones oficiales.
+            Nuestro objetivo es ayudarte a construir una base sólida
+            de conocimientos y comprobar durante el aprendizaje que
+            realmente comprendes los conceptos y sabes aplicarlos.
+
+            <br /><br />
+
+            Queremos que termines cada formación con conocimientos
+            que puedas utilizar por tu cuenta y con una base que te
+            permita seguir avanzando con confianza.
+
+          </p>
+
+        </div>
+
+
+        <!-- AVISO SEGURIDAD -->
+
+        <div
+          class="notice-box mt-4"
+          data-reveal
+        >
+
+          <i class="bi bi-shield-lock"></i>
+
+          <p>
+
+            <strong>
+              Seguridad y ética.
+            </strong>
+
+            Las pruebas de seguridad se realizan exclusivamente sobre
+            sistemas para los que el cliente tenga autorización.
+            Nuestro objetivo es detectar posibles problemas, explicar
+            su impacto y ayudar a reducir el riesgo.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================== PROCESO ===================== -->
+
+    <section
+      class="section"
+      id="proceso"
+    >
+
+      <div class="container">
+
+        <div
+          class="section-head"
+          data-reveal
+        >
+
+          <span class="eyebrow eyebrow-dark">
+            Cómo trabajamos
+          </span>
+
+          <h2>
+            Un proceso sencillo y transparente
+          </h2>
+
+          <p>
+            Primero hablamos contigo, después acordamos el servicio
+            y finalmente comenzamos.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-3 process-row">
+
+          <div
+            class="col-md-4"
+            data-reveal
+            data-reveal-delay="0"
+          >
+
+            <div class="process-step">
+
+              <div class="process-num">
+                01
+              </div>
+
+              <h3>
+                Nos cuentas tu proyecto
+              </h3>
+
+              <p>
+                Escríbenos por correo y explícanos qué necesitas.
+                Revisaremos tu solicitud y nos pondremos en contacto contigo.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-4"
+            data-reveal
+            data-reveal-delay="100"
+          >
+
+            <div class="process-step">
+
+              <div class="process-num">
+                02
+              </div>
+
+              <h3>
+                Recibes tu presupuesto
+              </h3>
+
+              <p>
+                Te enviamos una propuesta clara con el servicio,
+                precio, alcance y condiciones antes de realizar cualquier pago.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-4"
+            data-reveal
+            data-reveal-delay="200"
+          >
+
+            <div class="process-step">
+
+              <div class="process-num">
+                03
+              </div>
+
+              <h3>
+                Confirmas y comenzamos
+              </h3>
+
+              <p>
+                Una vez aceptado el presupuesto, te indicaremos
+                el método de pago acordado y comenzaremos el trabajo.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="availability-banner mt-5"
+          data-reveal
+        >
+
+          <i class="bi bi-calendar2-check"></i>
+
+          <p>
+            Trabajamos con disponibilidad limitada:
+            máximo <strong>3 proyectos por semana</strong>
+            para poder cuidar cada detalle.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================== POR QUÉ NOSOTROS ===================== -->
+
+    <section
+      class="section section-tint"
+      id="por-que"
+    >
+
+      <div class="container">
+
+        <div
+          class="section-head"
+          data-reveal
+        >
+
+          <span class="eyebrow eyebrow-dark">
+            Por qué nosotros
+          </span>
+
+          <h2>
+            Tecnología con transparencia y criterio
+          </h2>
+
+          <p>
+            No competimos por ser los más baratos,
+            sino por ofrecer soluciones fiables y bien revisadas.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-2">
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="0"
+          >
+
+            <div class="why-card">
+
+              <i class="bi bi-code-square"></i>
+
+              <h3>
+                Código revisado a mano
+              </h3>
+
+              <p>
+                Cada proyecto se revisa antes de publicarse
+                para detectar errores y mejorar su calidad.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="80"
+          >
+
+            <div class="why-card">
+
+              <i class="bi bi-calendar-week"></i>
+
+              <h3>
+                Disponibilidad limitada
+              </h3>
+
+              <p>
+                Aceptamos pocos proyectos a la vez para poder
+                dedicar el tiempo necesario a cada trabajo.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="160"
+          >
+
+            <div class="why-card why-card-accent">
+
+              <i class="bi bi-person-lines-fill"></i>
+
+              <h3>
+                Atención personal
+              </h3>
+
+              <p>
+                Cuando escribes, te responde una persona del equipo,
+                sin respuestas automáticas ni mensajes genéricos.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="0"
+          >
+
+            <div class="why-card">
+
+              <i class="bi bi-mortarboard"></i>
+
+              <h3>
+                Formación y experiencia
+              </h3>
+
+              <p>
+                Aplicamos conocimientos de desarrollo y tecnología
+                buscando soluciones prácticas y mantenibles.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="80"
+          >
+
+            <div class="why-card why-card-accent">
+
+              <i class="bi bi-unlock"></i>
+
+              <h3>
+                Código limpio y editable
+              </h3>
+
+              <p>
+                Entregamos código limpio y comprensible,
+                evitando bloqueos innecesarios para el cliente.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-reveal
+            data-reveal-delay="160"
+          >
+
+            <div class="why-card why-card-warning">
+
+              <i class="bi bi-exclamation-triangle"></i>
+
+              <h3>
+                Menos riesgos para tu negocio
+              </h3>
+
+              <p>
+                Una web o sistema mal configurado puede generar
+                problemas técnicos, pérdidas de clientes o riesgos
+                de seguridad. Trabajamos para reducirlos.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="notice-box mt-5"
+          data-reveal
+        >
+
+          <i class="bi bi-info-circle"></i>
+
+          <p>
+
+            <strong>
+              Nota honesta:
+            </strong>
+
+            en desarrollo web y seguridad informática el riesgo cero
+            no existe. Lo que sí hacemos es reducirlo mediante
+            revisión, pruebas y buenas prácticas.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================== CONTACTO ===================== -->
+
+    <section
+      class="section"
+      id="contacto"
+    >
+
+      <div class="container">
+
+        <div class="row g-5 align-items-start">
+
+          <div
+            class="col-lg-5"
+            data-reveal
+          >
+
+            <span class="eyebrow eyebrow-dark">
+              Contacto
+            </span>
+
+            <h2 class="mb-3">
+              Solicita presupuesto para tu proyecto
+            </h2>
+
+            <p class="text-muted mb-4">
+              Escríbenos con los datos de tu negocio,
+              el servicio que te interesa y qué necesitas.
+              Te responderemos para confirmar disponibilidad.
+            </p>
+
+
+            <ul class="contact-info">
+
+              <li>
+                <i class="bi bi-envelope"></i>
+
+                <a
+                  href="mailto:doraciber@doraciber.es"
+                  class="text-reset"
+                >
+                  doraciber@doraciber.es
+                </a>
+              </li>
+
+              <li>
+                <i class="bi bi-geo-alt"></i>
+                Trabajo remoto, clientes en toda España
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div
+            class="col-lg-7"
+            data-reveal
+            data-reveal-delay="120"
+          >
+
+            <!--
+              IMPORTANTE:
+              Los atributos name coinciden con las variables de EmailJS:
+
+              name     -> {{name}}
+              email    -> {{email}}
+              negocio  -> {{negocio}}
+              plan     -> {{plan}}
+              message  -> {{message}}
+            -->
+
+            <form
+              class="contact-form"
+              id="contactForm"
+              novalidate
+            >
+
+              <div class="row g-3">
+
+                <!-- NOMBRE -->
+
+                <div class="col-md-6">
+
+                  <label
+                    class="form-label"
+                    for="nombre"
+                  >
+                    Tu nombre
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    name="name"
+                    placeholder="Nombre y apellidos"
+                    autocomplete="name"
+                    required
+                  />
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="col-md-6">
+
+                  <label
+                    class="form-label"
+                    for="email"
+                  >
+                    Tu email
+                  </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="tucorreo@ejemplo.com"
+                    autocomplete="email"
+                    required
+                  />
+
+                </div>
+
+
+                <!-- NEGOCIO -->
+
+                <div class="col-md-6">
+
+                  <label
+                    class="form-label"
+                    for="negocio"
+                  >
+                    Nombre de tu negocio
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="negocio"
+                    name="negocio"
+                    placeholder="Opcional"
+                    autocomplete="organization"
+                  />
+
+                </div>
+
+
+                <!-- SERVICIO -->
+
+                <div class="col-md-6">
+
+                  <label
+                    class="form-label"
+                    for="plan"
+                  >
+                    ¿Qué servicio te interesa?
+                  </label>
+
+                  <select
+                    class="form-select"
+                    id="plan"
+                    name="plan"
+                  >
+
+                    <option value="" selected>
+                      Elige un servicio
+                    </option>
+
+                    <option value="Básica — 250 €">
+                      Básica — 250 €
+                    </option>
+
+                    <option value="Con Dominio — 350 €">
+                      Con Dominio — 350 €
+                    </option>
+
+                    <option value="Completo — 400 €">
+                      Completo — 400 €
+                    </option>
+
+                    <option value="Desarrollo Android — Desde 450 €">
+                      Desarrollo Android — Desde 450 €
+                    </option>
+
+                    <option value="Desarrollo multiplataforma — Desde 600 €">
+                      Desarrollo multiplataforma — Desde 600 €
+                    </option>
+
+                    <option value="Herramientas Python y Linux — Desde 250 €">
+                      Herramientas Python &amp; Linux — Desde 250 €
+                    </option>
+
+                    <option value="Seguridad informática — Desde 300 €">
+                      Seguridad informática — Desde 300 €
+                    </option>
+
+                    <option value="Soporte IT — 35 €/hora">
+                      Soporte IT — 35 €/hora
+                    </option>
+
+                    <option value="Formación en desarrollo — Desde 30 €/hora">
+                      Formación en desarrollo — Desde 30 €/hora
+                    </option>
+
+                    <option value="Formación Linux y ciberseguridad — Desde 35 €/hora">
+                      Formación Linux y ciberseguridad — Desde 35 €/hora
+                    </option>
+
+                    <option value="Otro / No estoy seguro">
+                      Otro / No estoy seguro
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div class="col-12">
+
+                  <label
+                    class="form-label"
+                    for="mensaje"
+                  >
+                    Cuéntanos tu proyecto
+                  </label>
+
+                  <textarea
+                    class="form-control"
+                    id="mensaje"
+                    name="message"
+                    rows="4"
+                    placeholder="¿Qué tipo de negocio tienes y qué necesitas?"
+                    required
+                  ></textarea>
+
+                </div>
+
+
+                <!-- BOTÓN -->
+
+                <div class="col-12">
+
+                  <button
+                    type="submit"
+                    class="btn btn-accent btn-lg px-4"
+                  >
+                    Enviar mensaje
+                  </button>
+
+                  <span
+                    class="form-feedback ms-3"
+                    id="formFeedback"
+                    role="status"
+                    aria-live="polite"
+                  ></span>
+
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ===================== FOOTER ===================== -->
+
+  <footer class="footer">
+
+    <div
+      class="container d-flex flex-column flex-md-row
+             justify-content-between align-items-center
+             gap-2 py-4"
+    >
+
+      <span class="brand-mark small">
+        Dora<span class="text-accent">Ciber</span>
+      </span>
+
+      <p class="mb-0 small">
+        &copy; 2026 DoraCiber · Desarrollo web y soluciones tecnológicas
+      </p>
+
+      <p class="mb-0 small">
+        Código revisado · disponibilidad limitada
+      </p>
+
+      <div class="small legal-links">
+
+        <a href="aviso-legal.html">
+          Aviso legal
+        </a>
+
+        <span aria-hidden="true"> · </span>
+
+        <a href="privacidad.html">
+          Política de privacidad
+        </a>
+
+        <span aria-hidden="true"> · </span>
+
+        <a href="cookies.html">
+          Política de cookies
+        </a>
+
+        <span aria-hidden="true"> · </span>
+
+        <a href="condiciones.html">
+          Condiciones de contratación
+        </a>
+
+      </div>
+
     </div>
-  </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+  </footer>
+
+
+  <!-- ===================== BOOTSTRAP JS ===================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+
+  <!-- ===================== JAVASCRIPT PROPIO ===================== -->
+
+  <script src="js/main.js"></script>
+
 </body>
+
+</html>

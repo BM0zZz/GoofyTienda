@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doraciber.es/sitemap.xml
