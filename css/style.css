@@ -458,3 +458,36 @@ a{ text-decoration: none; }
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ===================== LOGO RESPONSIVE ===================== */
+/* Evita que el logo de las páginas legales se salga de la pantalla */
+.logo{
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-container{
+  width: 100%;
+  max-width: 220px;
+}
+
+.logo-container img{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 576px){
+  .logo{
+    width: 170px;
+    max-width: 80%;
+  }
+
+  .logo-container{
+    max-width: 170px;
+  }
+}
